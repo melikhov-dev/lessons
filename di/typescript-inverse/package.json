@@ -1,0 +1,16 @@
+{
+  "name": "di-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.9.1",
+    "typescript": "^3.8.3"
+  }
+}
