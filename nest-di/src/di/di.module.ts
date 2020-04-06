@@ -6,6 +6,8 @@ import { join } from "path";
 import { Product } from './product/product.entity';
 import { UserService } from './user/user.service';
 
+const PRODUCT_REPOSITORY = Symbol('ProductRepository');
+
 const options: ConnectionOptions = {
   type: "sqlite",
   database: join(__dirname, '..', '..', 'data', 'di.sqlite'),
@@ -18,7 +20,7 @@ const options: ConnectionOptions = {
   providers: [
     UserService,
     {
-      provide: 'ProductRepository',
+      provide: PRODUCT_REPOSITORY,
       useFactory: async () => {
           const connection = await createConnection(options);
           return connection.getRepository(Product);
@@ -29,7 +31,7 @@ const options: ConnectionOptions = {
       useFactory: (productRepository, userService) => {
         return new ProductService(productRepository, userService)
       },
-      inject: ['ProductRepository', UserService]
+      inject: [PRODUCT_REPOSITORY, UserService]
     }
   ]
 })
