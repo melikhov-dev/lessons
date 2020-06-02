@@ -10,4 +10,4 @@ class App {
 }
 
 const app = new App();
-dogService.createDog();
+app.createDog();
