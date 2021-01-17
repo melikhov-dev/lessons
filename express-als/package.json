@@ -1,0 +1,16 @@
+{
+  "name": "express-als",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=12.17.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pino": "^6.9.0",
+    "pino-pretty": "^4.3.0",
+    "uuid": "^8.3.2"
+  }
+}
