@@ -12,6 +12,7 @@ promiseOne.then((result) => {
     console.log("finished");
 }).catch((e) => {
 }).finally(() => {
+    cancelTimeout.abort();
 })
 
 const timeout = async () => {
