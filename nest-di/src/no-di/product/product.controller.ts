@@ -3,7 +3,7 @@ import {ProductService} from './product.service';
 
 @Controller('no-di/product')
 export class ProductController {
-  private _productService;
+  private _productService: ProductService;
   constructor() {
     this._productService = new ProductService();
     this._productService.init();
